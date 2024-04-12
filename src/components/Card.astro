@@ -1,0 +1,49 @@
+---
+const {
+  imageHero,
+  tituloCard,
+  descriptionCard,
+  buttonCard,
+  subtitleCard,
+  linkCard,
+  backgroundCard,
+  colorTextCard,
+} = Astro.props;
+---
+
+<div class="card_hero_page h-96 flex items-center">
+  <img src=`${imageHero}` alt="" class="w-1/2 h-full" />
+  <div
+    style=`background: ${backgroundCard}`
+    class="text_card_hero w-1/2 h-full flex flex-col items-center justify-center gap-3"
+  >
+    <h1
+    
+      class="font-extrabold text-6xl  text-center"
+    >
+      {tituloCard}
+    </h1>
+    <h2  class="font-extrabold text-4xl">
+      {subtitleCard}
+    </h2>
+    <p  class="text-center w-96">
+      {descriptionCard}
+    </p>
+  {buttonCard && 
+      <a
+      href=`${linkCard}`
+      class="rounded-3xl p-2 font-bold text-center max-w-fit">{buttonCard}</a>
+  }
+  </div>
+</div>
+
+
+<style define:vars={{colorTextCard}}>
+  h1, h2, p, a {
+    color: var(--colorTextCard)
+  }
+
+  a {
+    border: 1px solid var(--colorTextCard);
+  }
+</style>
