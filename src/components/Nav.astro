@@ -5,7 +5,9 @@
 <header>
   <nav class="flex justify-between py-2.5 px-24 items-center h-24">
     <div class="nav_options h-90 flex items-center gap-12 h-full">
-      <img src="/public/logo.png" alt="" class="w-14 h-14 object-cover" />
+      <a href="/"
+        ><img src="/logo.png" alt="" class="w-14 h-14 object-cover" /></a
+      >
       <ul class="flex gap-12 items-center">
         <li class="font-sans font-extrabold text-sm tracking-widest">
           <a href="/menu">MENU</a>
@@ -19,7 +21,7 @@
       </ul>
     </div>
     <div class="locate_store">
-      <a href="" class="font-medium flex items-center gap-2">
+      <a href="" class="font-bold flex items-center gap-2 text-lg">
         <svg width="22" height="22" viewBox="0 0 20 20"
           ><path
             fill="#000000"
@@ -33,16 +35,20 @@
 </header>
 
 <style>
+  li > a {
+    padding: 0px;
+    border: none;
+    transition:
+      color 0.333s ease-in-out,
+      border-bottom 0.222s ease-in-out,
+      padding 0.222s ease-in-out;
+
+    border-bottom: 0px solid transparent;
+  }
   li > a:hover {
     color: #01723e;
     border-bottom: 5px solid #01723e;
     padding-bottom: 30px;
-  }
-
-  a {
-    border: none;
-    transition:
-      color 0.333s cubic-bezier(0.645, 0.045, 0.355, 1),
-      border-bottom 0.222s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.222s ease-in-out;
   }
 </style>

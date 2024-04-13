@@ -8,10 +8,11 @@ const {
   linkCard,
   backgroundCard,
   colorTextCard,
+  numberCard
 } = Astro.props;
 ---
 
-<div class="card_hero_page h-96 flex items-center">
+<div class=`card_hero_page${numberCard} h-96 flex items-center`>
   <img src=`${imageHero}` alt="" class="w-1/2 h-full" />
   <div
     style=`background: ${backgroundCard}`
@@ -19,7 +20,7 @@ const {
   >
     <h1
     
-      class="font-extrabold text-6xl  text-center"
+      class="font-black text-6xl  text-center"
     >
       {tituloCard}
     </h1>
@@ -46,4 +47,14 @@ const {
   a {
     border: 1px solid var(--colorTextCard);
   }
+
+  .card_hero_page1 .text_card_hero, .card_hero_page3 .text_card_hero {
+    order: 1;
+  }
+
+  .card_hero_page1 img, .card_hero_page3 img {
+    order: 2;
+  }
+
+  
 </style>

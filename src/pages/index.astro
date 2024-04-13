@@ -1,16 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import heroData from "../heroData";
+import heroData from "../data/heroData";
 import Nav from "../components/Nav.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Starbucks | Coffe">
-  <Nav colorCard={"Red"} />
+<Layout title="Starbucks | Home">
+  <Nav />
   <div class="cards_hero flex flex-col gap-8">
     {
-      heroData.map((data) => (
+      heroData.map((data, index) => (
         <Card
           imageHero={data.image}
           tituloCard={data.title}
@@ -20,6 +20,7 @@ import Footer from "../components/Footer.astro";
           buttonCard={data.button}
           backgroundCard={data.background}
           colorTextCard={data.color}
+          numberCard={index}
         />
       ))
     }
