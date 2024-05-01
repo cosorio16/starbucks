@@ -12,11 +12,11 @@ const {
 } = Astro.props;
 ---
 
-<div class=`card_hero_page${numberCard} h-96 flex items-center`>
-  <img src=`${imageHero}` alt="" class="w-1/2 h-full" />
+<div class=`card_hero_page${numberCard} grid grid-cols-2 w-full content-centerr`>
+  <img src=`${imageHero}` alt="" class="w-full h-full aspect-auto" />
   <div
     style=`background: ${backgroundCard}`
-    class="text_card_hero w-1/2 h-full flex flex-col items-center justify-center gap-3"
+    class="text_card_hero w-full h-full flex flex-col items-center justify-center gap-3 "
   >
     <h1
     
