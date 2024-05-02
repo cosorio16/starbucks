@@ -2,12 +2,12 @@
 
 ---
 
-<footer class=" flex flex-col gap-4 max-w-screen-xl mx-auto">
+<footer class="flex flex-col gap-4 w-full">
   <div
-    class="main_footer_info md:flex border-b w-full md:px-24 px-5 py-16 gap-10 grid grid-cols-1"
+    class="main_footer_info md:flex border-b w-full md:px-24 px-5 py-16 gap-10 grid grid-cols-1 max-w-screen-xl mx-auto"
   >
     <div class="about_us flex flex-col gap-7 md:w-48">
-      <h1 class="text-xl font-bold opacity-90">Sobre nosotros</h1>
+      <h1 class="text-base md:text-xl font-bold opacity-90">Sobre nosotros</h1>
       <a
         href=""
         class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
@@ -35,7 +35,9 @@
       >
     </div>
     <div class="client_service flex flex-col gap-7 items-start md:w-44">
-      <h1 class="font-bold text-xl opacity-90">Atencion al Cliente</h1>
+      <h1 class="font-bold text-base md:text-xl opacity-90">
+        Atencion al Cliente
+      </h1>
       <a
         href="https://contacto.miexperienciastarbucks.com.co/"
         class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
@@ -47,10 +49,14 @@
         >Factura Electronica</a
       >
     </div>
-    <img src="footer-colombia.png" alt="" class="object-cover aspect-video w-[150px] h-10 md:ml-auto"/>
+    <img
+      src="footer-colombia.png"
+      alt=""
+      class="object-cover aspect-video w-[150px] h-10 md:ml-auto"
+    />
   </div>
-  <div class="flex flex-col items-center justify-between py-2 h-full">
-    <div class="social_media flex items-center justify-center gap-10 p-7">
+  <div class="flex flex-col py-2 px-3 h-full">
+    <div class="social_media flex gap-7 py-2 px-2 mb-10 sm:justify-center">
       <a
         href=""
         class="bg-black rounded-full p-1 hover:scale-110 transition-all"
@@ -86,7 +92,7 @@
       </a>
     </div>
     <div
-      class="more_info flex gap-6 font-bold text-base flex-wrap items-center justify-center px-3"
+      class="more_info flex gap-6 font-bold text-base px-3 flex-col sm:flex-row sm:flex-wrap sm:justify-center"
     >
       <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Terminos de uso web</a
@@ -117,3 +123,9 @@
     </div>
   </div>
 </footer>
+
+<style is:inline>
+  footer {
+    box-shadow: 0px -1px 15px 0 rgba(0, 0, 0, 0.096);
+  }
+</style>

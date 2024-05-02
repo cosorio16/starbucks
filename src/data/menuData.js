@@ -3,13 +3,13 @@ const menu = [
     title: "Temporada Spring",
     products: [
       {
-        name: "Bebidas Spring",
-        img: "https://djftrby1k8irl.cloudfront.net/s3fs-public/2024-04%2FCHOCOLATE_COOKIES_%26_CREAM_FRAPPUCCINO_1.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop",
+        name: "Bebidas Summer",
+        img: "https://djftrby1k8irl.cloudfront.net/s3fs-public/2024-04%2FRETROPINK-FRAPPUCCINO-667X667_0.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop",
       },
 
       {
-        name: "Alimentos Spring",
-        img: "https://djftrby1k8irl.cloudfront.net/s3fs-public/2024-04%2FPANINI_PAVO__0.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop",
+        name: "Alimentos Summer",
+        img: "https://djftrby1k8irl.cloudfront.net/s3fs-public/2024-04%2FFOOD-RETRO_0.png?auto=format,compress&q=70&crop=focalpoint&ar=1:1.0&w=180&fit=crop",
       },
     ],
   },
