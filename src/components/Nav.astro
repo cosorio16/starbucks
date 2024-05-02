@@ -3,12 +3,18 @@
 ---
 
 <header class="shadow-md" transition:persist="">
-  <nav class="flex justify-between py-2.5 px-24 items-center h-24  max-w-screen-xl mx-auto xl:px-20">
+  <nav
+    class="flex justify-between py-2.5 px-5 items-center h-24 max-w-screen-xl mx-auto xl:px-20"
+  >
     <div class="nav_options h-90 flex items-center gap-12 h-full">
       <a href="/"
-        ><img src="/logo.png" alt="" class="w-14 h-14 object-cover" /></a
+        ><img
+          src="/logoPage.png"
+          alt=""
+          class="w-14 h-14 object-cover scale-125"
+        /></a
       >
-      <ul class="flex gap-12 items-center">
+      <ul class="hidden md:flex gap-12 items-center">
         <li class="font-sans font-extrabold text-sm tracking-widest">
           <a href="/menu">MENU</a>
         </li>
@@ -20,7 +26,7 @@
         </li>
       </ul>
     </div>
-    <div class="locate_store">
+    <div class="locate_store hidden md:block">
       <a href="" class="font-bold flex items-center gap-2 text-lg">
         <svg width="22" height="22" viewBox="0 0 20 20"
           ><path
@@ -31,6 +37,17 @@
         Localizar Tienda</a
       >
     </div>
+    <button class="md:hidden">
+      <svg
+        width="45"
+        height="45"
+        viewBox="0 0 24 24"
+        ><path
+          fill="#000000"
+          d="M4 18q-.425 0-.712-.288T3 17q0-.425.288-.712T4 16h16q.425 0 .713.288T21 17q0 .425-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12q0-.425.288-.712T4 11h16q.425 0 .713.288T21 12q0 .425-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7q0-.425.288-.712T4 6h16q.425 0 .713.288T21 7q0 .425-.288.713T20 8z"
+        ></path></svg
+      >
+    </button>
   </nav>
 </header>
 

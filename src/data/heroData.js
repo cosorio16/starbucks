@@ -2,13 +2,13 @@ const heroData = [
   {
     image: "/cookies-and-cream.jpeg",
     description:
-      "¡Cookies and Cream Frappuccino, Chocolate Cookies and Cream Frappuccino!",
-    title: "Cookies and Cream ",
-    subtitle: "Regresa",
+      "¡Viaja en el tiempo con nuestras nuevas bebidas Retro Pink Matcha Helado y Retro Pink Frappuccino®!",
+    title: "Verano Retro",
+    subtitle: "",
     button: "",
     link: "",
-    color: "#75466f",
-    background: "#d5d0e4",
+    color: "#ef3340",
+    background: "#f9c553",
   },
   {
     image: "/viajemos.jpeg",
