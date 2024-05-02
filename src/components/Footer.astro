@@ -2,9 +2,11 @@
 
 ---
 
-<footer class="h-screen flex flex-col gap-4">
-  <div class="main_footer_info flex border-b-2 w-full px-24 py-16 gap-10">
-    <div class="about_us flex flex-col gap-7 w-48">
+<footer class=" flex flex-col gap-4 max-w-screen-xl mx-auto">
+  <div
+    class="main_footer_info md:flex border-b w-full md:px-24 px-5 py-16 gap-10 grid grid-cols-1"
+  >
+    <div class="about_us flex flex-col gap-7 md:w-48">
       <h1 class="text-xl font-bold opacity-90">Sobre nosotros</h1>
       <a
         href=""
@@ -32,11 +34,11 @@
         >Guia de preparacion de un buen cafe en casa</a
       >
     </div>
-    <div class="client_service flex flex-col gap-7 items-start w-44">
+    <div class="client_service flex flex-col gap-7 items-start md:w-44">
       <h1 class="font-bold text-xl opacity-90">Atencion al Cliente</h1>
       <a
         href="https://contacto.miexperienciastarbucks.com.co/"
-        class="text-base font-semibold opacity-60 hover:opacity-100 transition-all"
+        class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
         >Sugerencias y reclamos</a
       >
       <a
@@ -45,11 +47,9 @@
         >Factura Electronica</a
       >
     </div>
-    <img src="" alt="" />
+    <img src="footer-colombia.png" alt="" class="object-cover aspect-video w-[150px] h-10 md:ml-auto"/>
   </div>
-  <div
-    class="second_footer_media_more flex flex-col items-center justify-between grow py-2"
-  >
+  <div class="flex flex-col items-center justify-between py-2 h-full">
     <div class="social_media flex items-center justify-center gap-10 p-7">
       <a
         href=""
@@ -85,42 +85,31 @@
         >
       </a>
     </div>
-    <div class="more_info flex gap-10 font-bold text-base">
-      <a
-        href=""
-        class="pr-2 border-r-2 opacity-60 hover:opacity-100 transition-all"
+    <div
+      class="more_info flex gap-6 font-bold text-base flex-wrap items-center justify-center px-3"
+    >
+      <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Terminos de uso web</a
       >
-      <span class="opacity-80">|</span>
-      <a
-        href=""
-        class="pr-2 border-r-2 opacity-60 hover:opacity-100 transition-all"
+
+      <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Aviso de Privacidad</a
       >
-      <span class="opacity-80">|</span>
 
-      <a
-        href=""
-        class="pr-2 border-r-2 opacity-60 hover:opacity-100 transition-all"
+      <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Politica de tratamiento de datos</a
       >
-      <span class="opacity-80">|</span>
 
-      <a
-        href=""
-        class="pr-2 border-r-2 opacity-60 hover:opacity-100 transition-all"
+      <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Reversion de pago</a
       >
-      <span class="opacity-80">|</span>
 
-      <a
-        href=""
-        class="pr-2 border-r-2 opacity-60 hover:opacity-100 transition-all"
+      <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Politica de garantias</a
       >
     </div>
     <div class="signature">
-      <p class="font-bold text-xs opacity-30 text-center">
+      <p class="font-bold text-xs opacity-30 text-center grow-0 py-5">
         Ⓒ 2024. Starbucks Cofee Company. Reservados todos los derechos <br />co
         | prod | fdaf994d47cfdf18b6f064f0ae5eacb432f873ac |
         26/02/2024-05:51:24:420
