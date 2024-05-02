@@ -1,0 +1,14 @@
+---
+import NewsCard from "./NewsCard.astro";
+import news from "../data/newsData.js";
+---
+
+<h1
+  class="bg-[#1e3932] text-white font-black flex items-center justify-center h-36 text-4xl"
+>
+  Nuestras historias
+</h1>
+
+<div class="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-36 max-w-screen-xl mx-auto">
+  {news.map((n) => <NewsCard newImg={n.img} newText={n.text} newDate={n.date} linkNew={n.link} />)}
+</div>

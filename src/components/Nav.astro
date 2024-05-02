@@ -38,10 +38,7 @@
       >
     </div>
     <button class="md:hidden">
-      <svg
-        width="35"
-        height="35"
-        viewBox="0 0 24 24"
+      <svg width="35" height="35" viewBox="0 0 24 24"
         ><path
           fill="#000000"
           d="M4 18q-.425 0-.712-.288T3 17q0-.425.288-.712T4 16h16q.425 0 .713.288T21 17q0 .425-.288.713T20 18zm0-5q-.425 0-.712-.288T3 12q0-.425.288-.712T4 11h16q.425 0 .713.288T21 12q0 .425-.288.713T20 13zm0-5q-.425 0-.712-.288T3 7q0-.425.288-.712T4 6h16q.425 0 .713.288T21 7q0 .425-.288.713T20 8z"
@@ -51,7 +48,7 @@
   </nav>
 </header>
 
-<style>
+<style is:inline>
   li > a {
     padding: 0px;
     border: none;
@@ -67,5 +64,9 @@
     border-bottom: 5px solid #01723e;
     padding-bottom: 30px;
     transition: all 0.222s ease-in-out;
+  }
+
+  header {
+    z-index: 100;
   }
 </style>
