@@ -12,7 +12,7 @@ const {
 } = Astro.props;
 ---
 
-<div class=`card_hero_page${numberCard} grid md:grid-cols-2 w-full content-center grid-cols-1`>
+<div class=`card_hero_page${numberCard} card_hero_page grid md:grid-cols-2 w-full content-center grid-cols-1 `>
   <img src=`${imageHero}` alt={tituloCard} class="w-full h-full aspect-video object-cover order-1" />
   <div
     style=`background: ${backgroundCard}`
@@ -44,6 +44,10 @@ const {
     color: var(--colorTextCard)
   }
 
+  .card_hero_page {
+    opacity: 0;
+  }
+
   a {
     border: 1px solid var(--colorTextCard);
   }
@@ -59,6 +63,44 @@ const {
   .card_hero_page2 .text_card_hero p {
     font-style: italic;
   }
+
+  .swing-in-top-fwd {
+	-webkit-animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 0.8s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+
 
   @media screen and (max-width: 767px) {
     .card_hero_page1 .text_card_hero, .card_hero_page3 .text_card_hero {
@@ -76,3 +118,4 @@ const {
     text-align: center;
   }
 </style>
+

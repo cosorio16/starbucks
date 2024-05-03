@@ -1,13 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import heroData from "../data/heroData";
-import Nav from "../components/Nav.astro";
 import Card from "../components/Card.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Starbucks | Home">
-  <Nav />
+<Layout title="Starbucks | Home" client:load>
   <div class="cards_hero flex flex-col gap-8 max-w-screen-xl mx-auto mb-10">
     {
       heroData.map((data, index) => (
@@ -27,3 +25,23 @@ import Footer from "../components/Footer.astro";
   </div>
   <Footer />
 </Layout>
+
+<script is:inline>
+  const $cardsHero = document.querySelectorAll(".card_hero_page");
+
+  const showCard = (entradas, observador) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("swing-in-top-fwd");
+      }
+    });
+  };
+
+  const observador = new IntersectionObserver(showCard, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.5,
+  });
+
+  $cardsHero.forEach((card) => observador.observe(card));
+</script>

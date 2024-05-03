@@ -3,9 +3,13 @@ const { newImg, newText, newDate, linkNew } = Astro.props;
 ---
 
 <a href=`#`>
-  <div class=" w-full h-[470px] sm:h-[440px] flex flex-col bg-[#f9f9f9]">
+  <div
+    class="w-full h-[480px] sm:h-[470px] flex flex-col bg-[#f9f9f9] hover:shadow-2xl transition-all"
+  >
     <img src=`${newImg}` alt="" class="w-full aspect-video lg:h-3/5 sm:h-1/2" />
-    <p class="font-bold text-xl tracking-wide p-1 lg:p-5 lg:text-2xl grow sm:p-5">
+    <p
+      class="font-bold text-xl tracking-wide p-1 lg:p-5 lg:text-2xl grow sm:p-5"
+    >
       {newText}
     </p>
     <span class="p-2 opacity-90 lg:p-5">{newDate}</span>

@@ -2,12 +2,12 @@
 
 ---
 
-<header class="shadow-md" transition:persist="">
+<header class="shadow-md relative" transition:persist="">
   <nav
     class="flex justify-between py-2.5 px-5 items-center h-24 max-w-screen-xl mx-auto xl:px-20"
   >
     <div class="nav_options h-90 flex items-center gap-12 h-full">
-      <a href="/"
+      <a href="/" class="menuLinkImage"
         ><img
           src="/logoPage.png"
           alt=""
@@ -37,7 +37,7 @@
         Localizar Tienda</a
       >
     </div>
-    <button class="md:hidden">
+    <button class="md:hidden menu">
       <svg width="35" height="35" viewBox="0 0 24 24"
         ><path
           fill="#000000"
@@ -45,10 +45,43 @@
         ></path></svg
       >
     </button>
+
+    <div
+      class=`absolute h-screen bg-white menu_container right-0 top-24 flex flex-col w-[80%] py-10 px-5 gap-8 md:hidden`
+    >
+      <a
+        href="/menu"
+        class="font-sans font-semibold text-sm tracking-widest hover:text-green-600 menulink"
+        >MENU</a
+      >
+      <a
+        href="/cafe"
+        class="font-sans font-semibold text-sm tracking-widest hover:text-green-600 menulink"
+        >CAFÉ</a
+      >
+      <a
+        href="/novedades"
+        class="font-sans font-semibold text-sm tracking-widest hover:text-green-600 border-b-2 pb-10 menulink"
+        >NOVEDADES</a
+      >
+      <button class="flex items-center font-sans font-semibold text-base gap-2">
+        <svg width="22" height="22" viewBox="0 0 20 20"
+          ><path
+            fill="#000000"
+            d="M10 20S3 10.87 3 7a7 7 0 1 1 14 0c0 3.87-7 13-7 13m0-11a2 2 0 1 0 0-4a2 2 0 0 0 0 4"
+          ></path></svg
+        >Localizar Tienda
+      </button>
+    </div>
   </nav>
 </header>
 
 <style is:inline>
+  .menu_container {
+    display: none;
+    z-index: 999;
+  }
+
   li > a {
     padding: 0px;
     border: none;
@@ -66,7 +99,110 @@
     transition: all 0.222s ease-in-out;
   }
 
-  header {
-    z-index: 100;
+  /* salida */
+  .scale-out-hor-right {
+    display: flex;
+    -webkit-animation: scale-out-hor-right 0.5s
+      cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation: scale-out-hor-right 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53)
+      both;
+  }
+
+  @-webkit-keyframes scale-out-hor-right {
+    0% {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      opacity: 1;
+    }
+  }
+  @keyframes scale-out-hor-right {
+    0% {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      opacity: 1;
+    }
+  }
+
+  /* entrada */
+
+  .scale-in-hor-right {
+    display: flex;
+    -webkit-animation: scale-in-hor-right 0.5s
+      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: scale-in-hor-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @-webkit-keyframes scale-in-hor-right {
+    0% {
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in-hor-right {
+    0% {
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+      -webkit-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
+      opacity: 1;
+    }
   }
 </style>
+
+<script is:inline data-astro-rerun>
+  const $reloadButton = document.querySelector(".menuLinkImage");
+  const $menuButton = document.querySelector("button.menu");
+  const $menu = document.querySelector(".menu_container");
+  const $links = document.querySelectorAll(".menulink");
+
+  $menuButton.addEventListener("click", (e) => {
+    $menu.classList.contains("scale-in-hor-right")
+      ? $menu.classList.replace("scale-in-hor-right", "scale-out-hor-right")
+      : $menu.classList.add("scale-in-hor-right");
+  });
+
+  $links.forEach((link) =>
+    link.addEventListener("click", (e) => {
+      $menu.classList.replace("scale-in-hor-right", "scale-out-hor-right");
+    })
+  );
+
+  $reloadButton.addEventListener("click", (e) => {
+    window.location.href = "/";
+  });
+</script>

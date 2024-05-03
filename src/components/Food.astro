@@ -11,15 +11,15 @@ import menu from "../data/menuData";
   {
     menu.map((item) => (
       <>
-        <div class="title">
-          <p class="font-bold text-lg md:text-xl border-y border-zinc-400 py-2 md:py-5 tracking-wide">
+        <div class="">
+          <p class="title font-bold text-lg md:text-xl border-y border-zinc-400 py-2 md:py-5 tracking-wide">
             {item.title}
           </p>
         </div>
-        <div class="products_container grid grid-cols-2 py-8 gap-10 lg:grid-cols-3">
+        <div class="products_container grid grid-cols-2 py-8 gap-10 lg:grid-cols-3 ">
           {item.products.map((product) => (
             <div class="container_product basis-1">
-              <div class="card_product flex flex-col gap-5 items-center">
+              <div class="card_product flex flex-col gap-5 items-center ">
                 <div class="img_product">
                   <img src={product.img} alt="" width="130px" />
                 </div>
@@ -36,6 +36,64 @@ import menu from "../data/menuData";
 </div>
 
 <style>
+  .scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+      both;
+    animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  }
+
+  .tracking-in-expand {
+    -webkit-animation: tracking-in-expand 0.7s
+      cubic-bezier(0.215, 0.61, 0.355, 1) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  }
+
+  @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+
+  @-webkit-keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes tracking-in-expand {
+    0% {
+      letter-spacing: -0.5em;
+      opacity: 0;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   .img_product {
     border-radius: 50%;
     background-color: #1e3932;
@@ -69,27 +127,63 @@ import menu from "../data/menuData";
 
   @media screen and (max-width: 767px) {
     .img_product {
-    border-radius: 50%;
-    background-color: #1e3932;
-    position: relative;
-    width: 130px;
-    height: 130px;
-    cursor: pointer;
-    outline: 1px solid rgba(0, 0, 0, 0);
-    transition:
-      transform 0.333s ease,
-      outline 0.333s ease-in-out;
-  }
+      border-radius: 50%;
+      background-color: #1e3932;
+      position: relative;
+      width: 130px;
+      height: 130px;
+      cursor: pointer;
+      outline: 1px solid rgba(0, 0, 0, 0);
+      transition:
+        transform 0.333s ease,
+        outline 0.333s ease-in-out;
+    }
 
-  .img_product img {
-    width: 110px;
-    height: 110px;
-    position: absolute;
-    left: calc(50% - 55px);
-    top: calc(50% - 60px);
-    transition: transform 0.333s ease;
-  }
+    .img_product img {
+      width: 110px;
+      height: 110px;
+      position: absolute;
+      left: calc(50% - 55px);
+      top: calc(50% - 60px);
+      transition: transform 0.333s ease;
+    }
   }
 </style>
 
-<script></script>
+<script is:inline>
+  document.addEventListener("astro:page-load", (e) => {
+    const $menuItems = document.querySelectorAll(".container_product");
+    const $titleItems = document.querySelectorAll(".title");
+
+    const showItems = (entradas, observador) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("scale-up-center");
+        }
+      });
+    };
+
+    const showTitle = (entradas, observador) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("tracking-in-expand");
+        }
+      });
+    };
+
+    const itemsObserver = new IntersectionObserver(showItems, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.2,
+    });
+
+    const titleObserver = new IntersectionObserver(showTitle, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.2,
+    });
+
+    $menuItems.forEach((card) => itemsObserver.observe(card));
+    $titleItems.forEach((title) => titleObserver.observe(title));
+  });
+</script>
