@@ -1,6 +1,7 @@
 ---
 const { title } = Astro.props;
 import Nav from "../components/Nav.astro";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <!doctype html>
@@ -12,9 +13,10 @@ import Nav from "../components/Nav.astro";
     <link rel="icon" type="image/svg+xml" href="/logoPage.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
-    <Nav />
+    <Nav transition:persist />
     <slot />
     <style is:global>
       @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");

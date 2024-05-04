@@ -2,7 +2,7 @@
 
 ---
 
-<header class="shadow-md relative" transition:persist="">
+<header class="shadow-md relative">
   <nav
     class="flex justify-between py-2.5 px-5 items-center h-24 max-w-screen-xl mx-auto xl:px-20"
   >
@@ -140,7 +140,6 @@
     }
   }
 
-
   .scale-in-hor-right {
     display: flex;
     -webkit-animation: scale-in-hor-right 0.5s
@@ -183,7 +182,7 @@
 </style>
 
 <script>
-  
+  document.addEventListener("astro:page-load", (e) => {
     const $reloadButton = document.querySelector(".menuLinkImage");
     const $menuButton = document.querySelector("button.menu");
     const $menu = document.querySelector(".menu_container");
@@ -204,5 +203,5 @@
     $reloadButton.addEventListener("click", (e) => {
       window.location.href = "/";
     });
- 
+  });
 </script>
