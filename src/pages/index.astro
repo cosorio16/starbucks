@@ -26,13 +26,13 @@ import Footer from "../components/Footer.astro";
   <Footer />
 </Layout>
 
-<script is:inline>
+<script>
   const $cardsHero = document.querySelectorAll(".card_hero_page");
 
   const showCard = (entradas, observador) => {
     entradas.forEach((entrada) => {
       if (entrada.isIntersecting) {
-        entrada.target.classList.add("swing-in-top-fwd");
+        entrada.target.classList.add("animated", "zoomIn");
       }
     });
   };

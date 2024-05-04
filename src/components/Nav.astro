@@ -99,7 +99,6 @@
     transition: all 0.222s ease-in-out;
   }
 
-  /* salida */
   .scale-out-hor-right {
     display: flex;
     -webkit-animation: scale-out-hor-right 0.5s
@@ -141,7 +140,6 @@
     }
   }
 
-  /* entrada */
 
   .scale-in-hor-right {
     display: flex;
@@ -184,25 +182,27 @@
   }
 </style>
 
-<script is:inline data-astro-rerun>
-  const $reloadButton = document.querySelector(".menuLinkImage");
-  const $menuButton = document.querySelector("button.menu");
-  const $menu = document.querySelector(".menu_container");
-  const $links = document.querySelectorAll(".menulink");
+<script>
+  
+    const $reloadButton = document.querySelector(".menuLinkImage");
+    const $menuButton = document.querySelector("button.menu");
+    const $menu = document.querySelector(".menu_container");
+    const $links = document.querySelectorAll(".menulink");
 
-  $menuButton.addEventListener("click", (e) => {
-    $menu.classList.contains("scale-in-hor-right")
-      ? $menu.classList.replace("scale-in-hor-right", "scale-out-hor-right")
-      : $menu.classList.add("scale-in-hor-right");
-  });
+    $menuButton.addEventListener("click", (e) => {
+      $menu.classList.contains("scale-in-hor-right")
+        ? $menu.classList.replace("scale-in-hor-right", "scale-out-hor-right")
+        : $menu.classList.add("scale-in-hor-right");
+    });
 
-  $links.forEach((link) =>
-    link.addEventListener("click", (e) => {
-      $menu.classList.replace("scale-in-hor-right", "scale-out-hor-right");
-    })
-  );
+    $links.forEach((link) =>
+      link.addEventListener("click", (e) => {
+        $menu.classList.replace("scale-in-hor-right", "scale-out-hor-right");
+      })
+    );
 
-  $reloadButton.addEventListener("click", (e) => {
-    window.location.href = "/";
-  });
+    $reloadButton.addEventListener("click", (e) => {
+      window.location.href = "/";
+    });
+ 
 </script>

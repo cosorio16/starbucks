@@ -39,7 +39,8 @@ import menu from "../data/menuData";
   .scale-up-center {
     -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
       both;
-    animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    animation: scale-up-center 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+    opacity: 0;
   }
 
   .tracking-in-expand {
@@ -50,22 +51,26 @@ import menu from "../data/menuData";
 
   @-webkit-keyframes scale-up-center {
     0% {
-      -webkit-transform: scale(0.5);
-      transform: scale(0.5);
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 0;
     }
     100% {
       -webkit-transform: scale(1);
       transform: scale(1);
+      opacity: 1;
     }
   }
   @keyframes scale-up-center {
     0% {
-      -webkit-transform: scale(0.5);
-      transform: scale(0.5);
+      -webkit-transform: scale(0);
+      transform: scale(0);
+      opacity: 0;
     }
     100% {
       -webkit-transform: scale(1);
       transform: scale(1);
+      opacity: 1;
     }
   }
 
@@ -150,40 +155,38 @@ import menu from "../data/menuData";
   }
 </style>
 
-<script is:inline>
-  document.addEventListener("astro:page-load", (e) => {
-    const $menuItems = document.querySelectorAll(".container_product");
-    const $titleItems = document.querySelectorAll(".title");
+<script is:inline data-astro-rerun>
+  const $menuItems = document.querySelectorAll(".container_product");
+  const $titleItems = document.querySelectorAll(".title");
 
-    const showItems = (entradas, observador) => {
-      entradas.forEach((entrada) => {
-        if (entrada.isIntersecting) {
-          entrada.target.classList.add("scale-up-center");
-        }
-      });
-    };
-
-    const showTitle = (entradas, observador) => {
-      entradas.forEach((entrada) => {
-        if (entrada.isIntersecting) {
-          entrada.target.classList.add("tracking-in-expand");
-        }
-      });
-    };
-
-    const itemsObserver = new IntersectionObserver(showItems, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.2,
+  const showItems = (entradas, observador) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("scale-up-center");
+      }
     });
+  };
 
-    const titleObserver = new IntersectionObserver(showTitle, {
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.2,
+  const showTitle = (entradas, observador) => {
+    entradas.forEach((entrada) => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add("tracking-in-expand");
+      }
     });
+  };
 
-    $menuItems.forEach((card) => itemsObserver.observe(card));
-    $titleItems.forEach((title) => titleObserver.observe(title));
+  const itemsObserver = new IntersectionObserver(showItems, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
   });
+
+  const titleObserver = new IntersectionObserver(showTitle, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.9,
+  });
+
+  $menuItems.forEach((card) => itemsObserver.observe(card));
+  $titleItems.forEach((title) => titleObserver.observe(title));
 </script>

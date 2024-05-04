@@ -1,6 +1,5 @@
 ---
 const { title } = Astro.props;
-import { ViewTransitions } from "astro:transitions";
 import Nav from "../components/Nav.astro";
 ---
 
@@ -13,7 +12,6 @@ import Nav from "../components/Nav.astro";
     <link rel="icon" type="image/svg+xml" href="/logoPage.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
   </head>
   <body>
     <Nav />
