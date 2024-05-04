@@ -1,6 +1,6 @@
 const heroData = [
   {
-    image: "/cookies-and-cream.jpeg",
+    image: "/cookies-and-cream.webp",
     description:
       "¡Viaja en el tiempo con nuestras nuevas bebidas Retro Pink Matcha Helado y Retro Pink Frappuccino®!",
     title: "Verano Retro",
@@ -11,7 +11,7 @@ const heroData = [
     background: "#f9c553",
   },
   {
-    image: "/viajemos.jpeg",
+    image: "/viajemos.webp",
     description: "",
     subtitle: "Viaja por Colombia ",
     button: "Conoce mas",
@@ -20,7 +20,7 @@ const heroData = [
     color: "#201f1f",
   },
   {
-    image: "/nuestro_planeta.jpg",
+    image: "/nuestro_planeta.webp",
     description:
       "Juntos seguimos construyendo un futuro más sostenible para el café 💚",
     subtitle: "INFORME DE SUSTENTABILIDAD",
@@ -30,7 +30,7 @@ const heroData = [
     background: "#1e3932",
   },
   {
-    image: "/tyc.jpg",
+    image: "/tyc.webp",
     description: "Términos y Condiciones ACTIVIDADES",
     title: "",
     button: "Mas informacion",
