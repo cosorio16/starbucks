@@ -27,21 +27,23 @@ import Footer from "../components/Footer.astro";
 </Layout>
 
 <script>
-  const $cardsHero = document.querySelectorAll(".card_hero_page");
+  document.addEventListener("astro:page-load", (e) => {
+    const $cardsHero = document.querySelectorAll(".card_hero_page");
 
-  const showCard = (entradas, observador) => {
-    entradas.forEach((entrada) => {
-      if (entrada.isIntersecting) {
-        entrada.target.classList.add("animated", "zoomIn");
-      }
+    const showCard = (entradas, observador) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("animated", "zoomIn");
+        }
+      });
+    };
+
+    const observador = new IntersectionObserver(showCard, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
     });
-  };
 
-  const observador = new IntersectionObserver(showCard, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
+    $cardsHero.forEach((card) => observador.observe(card));
   });
-
-  $cardsHero.forEach((card) => observador.observe(card));
 </script>

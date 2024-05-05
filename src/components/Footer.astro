@@ -6,48 +6,76 @@
   <div
     class="main_footer_info md:flex border-b w-full md:px-24 px-5 py-16 gap-10 grid grid-cols-1 max-w-screen-xl mx-auto"
   >
-    <div class="about_us flex flex-col gap-7 md:w-48">
-      <h1 class="text-base md:text-xl font-bold opacity-90">Sobre nosotros</h1>
-      <a
-        href=""
-        class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
-        >Acerca de Starbucks</a
-      >
-      <a
-        href="https://www.linkedin.com/company/alsea-colombia/mycompany/"
-        class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
-        >Trabaja con nosotros</a
-      >
-      <a
-        href=""
-        class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
-        >Historias y noticias Starbucks</a
-      >
-      <a
-        href=""
-        class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
-        >Sobre Notmilk</a
-      >
-      <a
-        href="http://lbal-starbucks-prod-files-default.s3.amazonaws.com/s3fs-public/2023-09/STARBUCKS_CARTILLA_METODOS_compressed.pdf"
-        class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
-        >Guia de preparacion de un buen cafe en casa</a
-      >
+    <div class="about_us">
+      <div class="relative">
+        <button
+          class="absolute right-[13px] transition-transform md:hidden"
+          id="buttonAbout"
+        >
+          <svg width="30" height="30" viewBox="0 0 24 24"
+            ><path fill="#000000" d="m12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8L18 9.4z"
+            ></path></svg
+          >
+        </button>
+        <h1 class="text-base md:text-xl font-bold opacity-90 mb-7 w-fit">
+          Sobre nosotros
+        </h1>
+      </div>
+
+      <div class="flex flex-col gap-7 md:w-48 scale-out-ver-top" id="about">
+        <a
+          href="#"
+          class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
+          >Acerca de Starbucks</a
+        >
+        <a
+          href="#"
+          class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
+          >Trabaja con nosotros</a
+        >
+        <a
+          href="#"
+          class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
+          >Historias y noticias Starbucks</a
+        >
+        <a
+          href="#"
+          class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
+          >Sobre Notmilk</a
+        >
+        <a
+          href="#"
+          class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
+          >Guia de preparacion de un buen cafe en casa</a
+        >
+      </div>
     </div>
-    <div class="client_service flex flex-col gap-7 items-start md:w-44">
-      <h1 class="font-bold text-base md:text-xl opacity-90">
+    <div class="client_service relative">
+      <button class="absolute right-[13px] md:hidden" id="attButton">
+        <svg width="30" height="30" viewBox="0 0 24 24"
+          ><path fill="#000000" d="m12 15.4l-6-6L7.4 8l4.6 4.6L16.6 8L18 9.4z"
+          ></path></svg
+        >
+      </button>
+      <h1 class="font-bold text-base md:text-xl opacity-90 mb-7 w-fit">
         Atencion al Cliente
       </h1>
-      <a
-        href="https://contacto.miexperienciastarbucks.com.co/"
-        class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
-        >Sugerencias y reclamos</a
+
+      <div
+        class="flex flex-col gap-7 items-start md:w-44 scale-out-ver-top"
+        id="attention"
       >
-      <a
-        href="https://tufacturastarbucks.com.co/"
-        class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
-        >Factura Electronica</a
-      >
+        <a
+          href="#"
+          class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
+          >Sugerencias y reclamos</a
+        >
+        <a
+          href="#"
+          class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
+          >Factura Electronica</a
+        >
+      </div>
     </div>
     <img
       src="/footer-colombia.png"
@@ -94,23 +122,23 @@
     <div
       class="more_info flex gap-6 font-bold text-base px-3 flex-col sm:flex-row sm:flex-wrap sm:justify-center"
     >
-      <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
+      <a href="#" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Terminos de uso web</a
       >
 
-      <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
+      <a href="#" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Aviso de Privacidad</a
       >
 
-      <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
+      <a href="#" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Politica de tratamiento de datos</a
       >
 
-      <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
+      <a href="#" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Reversion de pago</a
       >
 
-      <a href="" class="font-light opacity-60 hover:opacity-100 transition-all"
+      <a href="#" class="font-light opacity-60 hover:opacity-100 transition-all"
         >Politica de garantias</a
       >
     </div>
@@ -128,4 +156,108 @@
   footer {
     box-shadow: 0px -1px 15px 0 rgba(0, 0, 0, 0.096);
   }
+
+  .scale-in-ver-top {
+    -webkit-animation: scale-in-ver-top 0.5s
+      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: scale-in-ver-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @-webkit-keyframes scale-in-ver-top {
+    0% {
+      -webkit-transform: scaleY(0);
+      transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in-ver-top {
+    0% {
+      -webkit-transform: scaleY(0);
+      transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+  }
+
+  .scale-out-ver-top {
+    -webkit-animation: scale-out-ver-top 0.5s
+      cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+    animation: scale-out-ver-top 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  }
+  @-webkit-keyframes scale-out-ver-top {
+    0% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(0);
+      transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+      display: none;
+    }
+  }
+  @keyframes scale-out-ver-top {
+    0% {
+      -webkit-transform: scaleY(1);
+      transform: scaleY(1);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scaleY(0);
+      transform: scaleY(0);
+      -webkit-transform-origin: 100% 0%;
+      transform-origin: 100% 0%;
+      opacity: 1;
+      display: none;
+    }
+  }
 </style>
+
+<script>
+  document.addEventListener("astro:page-load", (e) => {
+    const $abutton = document.getElementById("buttonAbout");
+    const $asection = document.getElementById("about");
+    const $attbutton = document.getElementById("attButton");
+    const $attsection = document.getElementById("attention");
+
+    $abutton.addEventListener("click", (e) => {
+      $asection.classList.contains("scale-out-ver-top")
+        ? $asection.classList.replace("scale-out-ver-top", "scale-in-ver-top")
+        : $asection.classList.add("scale-out-ver-top");
+
+      $abutton.classList.toggle("rotate-180");
+    });
+
+    $attbutton.addEventListener("click", (e) => {
+      $attsection.classList.contains("scale-out-ver-top")
+        ? $attsection.classList.replace("scale-out-ver-top", "scale-in-ver-top")
+        : $attsection.classList.add("scale-out-ver-top");
+
+      $attbutton.classList.toggle("rotate-180");
+    });
+  });
+</script>
