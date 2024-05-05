@@ -157,38 +157,40 @@ import menu from "../data/menuData";
   }
 </style>
 
-<script is:inline data-astro-rerun>
-  const $menuItems = document.querySelectorAll(".container_product");
-  const $titleItems = document.querySelectorAll(".title");
+<script>
+  document.addEventListener("astro:page-load", (e) => {
+    const $menuItems = document.querySelectorAll(".container_product");
+    const $titleItems = document.querySelectorAll(".title");
 
-  const showItems = (entradas, observador) => {
-    entradas.forEach((entrada) => {
-      if (entrada.isIntersecting) {
-        entrada.target.classList.add("scale-up-center");
-      }
+    const showItems = (entradas, observador) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("scale-up-center");
+        }
+      });
+    };
+
+    const showTitle = (entradas, observador) => {
+      entradas.forEach((entrada) => {
+        if (entrada.isIntersecting) {
+          entrada.target.classList.add("tracking-in-expand");
+        }
+      });
+    };
+
+    const itemsObserver = new IntersectionObserver(showItems, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
     });
-  };
 
-  const showTitle = (entradas, observador) => {
-    entradas.forEach((entrada) => {
-      if (entrada.isIntersecting) {
-        entrada.target.classList.add("tracking-in-expand");
-      }
+    const titleObserver = new IntersectionObserver(showTitle, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.9,
     });
-  };
 
-  const itemsObserver = new IntersectionObserver(showItems, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.5,
+    $menuItems.forEach((card) => itemsObserver.observe(card));
+    $titleItems.forEach((title) => titleObserver.observe(title));
   });
-
-  const titleObserver = new IntersectionObserver(showTitle, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.9,
-  });
-
-  $menuItems.forEach((card) => itemsObserver.observe(card));
-  $titleItems.forEach((title) => titleObserver.observe(title));
 </script>
