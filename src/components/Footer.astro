@@ -22,7 +22,7 @@
         </h1>
       </div>
 
-      <div class="flex flex-col gap-7 md:w-48 scale-out-ver-top" id="about">
+      <div class="flex flex-col gap-7 md:w-48" id="about">
         <a
           href="#"
           class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
@@ -61,10 +61,7 @@
         Atencion al Cliente
       </h1>
 
-      <div
-        class="flex flex-col gap-7 items-start md:w-44 scale-out-ver-top"
-        id="attention"
-      >
+      <div class="flex flex-col gap-7 items-start md:w-44" id="attention">
         <a
           href="#"
           class="text-base opacity-60 hover:opacity-100 font-bold transition-all"
@@ -86,7 +83,7 @@
   <div class="flex flex-col py-2 px-3 h-full">
     <div class="social_media flex gap-7 py-2 px-2 mb-10 sm:justify-center">
       <a
-        href=""
+        href="#"
         class="bg-black rounded-full p-1 hover:scale-110 transition-all"
       >
         <svg width="30" height="30" viewBox="0 0 896 1664"
@@ -97,7 +94,7 @@
         >
       </a>
       <a
-        href=""
+        href="#"
         class="bg-black rounded-full p-1 hover:scale-110 transition-all"
       >
         <svg width="30" height="30" viewBox="0 0 24 24"
@@ -108,7 +105,7 @@
         >
       </a>
       <a
-        href=""
+        href="#"
         class="bg-black rounded-full p-1 hover:scale-110 transition-all"
       >
         <svg width="30" height="30" viewBox="0 0 24 24"
@@ -239,25 +236,33 @@
 
 <script>
   document.addEventListener("astro:page-load", (e) => {
-    const $abutton = document.getElementById("buttonAbout");
-    const $asection = document.getElementById("about");
-    const $attbutton = document.getElementById("attButton");
-    const $attsection = document.getElementById("attention");
+    if (document.body.clientWidth < 768) {
+      const $abutton = document.getElementById("buttonAbout");
+      const $asection = document.getElementById("about");
+      const $attbutton = document.getElementById("attButton");
+      const $attsection = document.getElementById("attention");
 
-    $abutton.addEventListener("click", (e) => {
-      $asection.classList.contains("scale-out-ver-top")
-        ? $asection.classList.replace("scale-out-ver-top", "scale-in-ver-top")
-        : $asection.classList.add("scale-out-ver-top");
+      $asection.classList.add("scale-out-ver-top");
+      $attsection.classList.add("scale-out-ver-top");
 
-      $abutton.classList.toggle("rotate-180");
-    });
+      $abutton.addEventListener("click", (e) => {
+        $asection.classList.contains("scale-out-ver-top")
+          ? $asection.classList.replace("scale-out-ver-top", "scale-in-ver-top")
+          : $asection.classList.add("scale-out-ver-top");
 
-    $attbutton.addEventListener("click", (e) => {
-      $attsection.classList.contains("scale-out-ver-top")
-        ? $attsection.classList.replace("scale-out-ver-top", "scale-in-ver-top")
-        : $attsection.classList.add("scale-out-ver-top");
+        $abutton.classList.toggle("rotate-180");
+      });
 
-      $attbutton.classList.toggle("rotate-180");
-    });
+      $attbutton.addEventListener("click", (e) => {
+        $attsection.classList.contains("scale-out-ver-top")
+          ? $attsection.classList.replace(
+              "scale-out-ver-top",
+              "scale-in-ver-top"
+            )
+          : $attsection.classList.add("scale-out-ver-top");
+
+        $attbutton.classList.toggle("rotate-180");
+      });
+    }
   });
 </script>

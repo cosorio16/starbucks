@@ -31,8 +31,9 @@ const heroData = [
   },
   {
     image: "/tyc.webp",
-    description: "Términos y Condiciones ACTIVIDADES",
+    description: "ACTIVIDADES",
     title: "",
+    subtitle: "Términos y Condiciones",
     button: "Mas informacion",
     link: "https://www.starbucks.com.co/seccion/terminos-condiciones",
     background: "#1e3932",
