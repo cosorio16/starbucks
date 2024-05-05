@@ -1,5 +1,4 @@
 ---
-const { titleProduct, imageProduct, nameProduct } = Astro.props;
 import menu from "../data/menuData";
 ---
 
@@ -36,11 +35,14 @@ import menu from "../data/menuData";
 </div>
 
 <style>
+  .container_product {
+    opacity: 0;
+  }
+
   .scale-up-center {
     -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
       both;
     animation: scale-up-center 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-    opacity: 0;
   }
 
   .tracking-in-expand {
@@ -178,7 +180,7 @@ import menu from "../data/menuData";
   const itemsObserver = new IntersectionObserver(showItems, {
     root: null,
     rootMargin: "0px",
-    threshold: 0.1,
+    threshold: 0.5,
   });
 
   const titleObserver = new IntersectionObserver(showTitle, {
